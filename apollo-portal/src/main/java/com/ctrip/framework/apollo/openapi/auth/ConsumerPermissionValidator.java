@@ -20,6 +20,7 @@ public class ConsumerPermissionValidator {
 
   public boolean hasModifyNamespacePermission(HttpServletRequest request, String appId, String
       namespaceName) {
+
     return permissionService.consumerHasPermission(consumerAuthUtil.retrieveConsumerId(request),
         PermissionType.MODIFY_NAMESPACE,
         RoleUtils.buildNamespaceTargetId(appId, namespaceName));
